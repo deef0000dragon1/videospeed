@@ -12,6 +12,17 @@ jobs:
       - name: checkout
         uses: actions/checkout@v1
         
+      - name: Set release
+        id: vars
+        run: echo ::set-output name=tag::$(echo ${GITHUB_REF:10})
+
+      - name: manifest Version
+        uses: deef0000dragon1/json-edit-action/@master
+        env:
+          KEY: version
+          VALUE: ${{ steps.vars.outputs.tag }}
+          FILE: manifest.json
+        
       - name: zip
         uses: montudor/action-zip@v0.1.0
         with:
