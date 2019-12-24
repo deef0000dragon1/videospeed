@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v1
         
       - name: zip
         uses: montudor/action-zip@v0.1.0
@@ -18,7 +18,7 @@ jobs:
           args: zip -r ./vscd.zip . -i * -x *.git*
         
       - name: Upload to 
-        uses: trmcnvn/chrome-addon@v1
+        uses: trmcnvn/chrome-addon@v2
         with:
           # extension is only necessary when updating an existing addon,
           # omitting it will create a new addon
