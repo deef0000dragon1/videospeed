@@ -22,7 +22,7 @@ jobs:
         with:
           # extension is only necessary when updating an existing addon,
           # omitting it will create a new addon
-          extension: video-speed-controller
+          extension: "Video Speed Controller"
           zip: vscd.zip
           client-id: ${{ secrets.CHROME_CLIENT_ID }}
           client-secret: ${{ secrets.CHROME_CLIENT_SECRET }}
