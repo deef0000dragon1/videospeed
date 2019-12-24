@@ -10,12 +10,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: checkout
-        uses: actions/checkout@v1
+        uses: actions/checkout@v2
         
       - name: zip
         uses: montudor/action-zip@v0.1.0
         with:
-          args: zip -r ./vscd.zip . -i *
+          args: zip -r ./vscd.zip . -i * -x *.git*
         
       - name: Upload to 
         uses: trmcnvn/chrome-addon@v1
